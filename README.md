@@ -3,7 +3,7 @@
 
 - **install terraform** where do you want to execute terraform script
 - **S3 Bucket** to store the terraform statefile
-- **Dynamodb** to lock the statefile if someone running running the code already
+- **Dynamodb** to lock the statefile
 
 #### Navigate to the env/mgmt-nonprod folder
 - if you are executing terraform on existing region modify the **terraform.tfvars** as per your need and if you are adding any new steram don't forget to update it on **main.tf**
