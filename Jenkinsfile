@@ -1,5 +1,5 @@
 node{
-    def DOCKER_HUB_ID = 'kammana'
+    def DOCKER_HUB_ID = 'srinivasarao2468'
     def IMAGE_NAME = "nodeapp"
     def IMAGE_VERSION = '0.0.1'
     
@@ -7,7 +7,7 @@ node{
         
         git branch: 'master', 
             credentialsId: 'github', 
-            url: 'https://github.com/javahometech/node-app'
+            url: 'https://github.com/srinivasarao2468/node-app'
     }
     
     stage('Build Docker Image'){
@@ -18,7 +18,7 @@ node{
     stage('Push To Private Registry'){
         
         withCredentials([string(credentialsId: 'docker-hub', variable: 'docker_hub_pwd')]) {
-             sh "docker login -u kammana -p ${docker_hub_pwd}"
+             sh "docker login -u srinivasarao2468 -p ${docker_hub_pwd}"
              sh "docker push ${DOCKER_HUB_ID}/${IMAGE_NAME}:${IMAGE_VERSION}"
         }
     }
